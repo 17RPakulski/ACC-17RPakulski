@@ -2,6 +2,8 @@
 
 default_list = ['a', 'b', 'c', 'd']
 
+
+
 # Menu
 
 print('''
@@ -17,14 +19,86 @@ print('''
 ''')
 
 
-############################################################################
 user = int(input('Enter Your Choice From 1-9: '))
+print()
 
-if user < 0 or user > 10:
-    print('Error...')
+if user < 0 or user > 9:
+    print('Error')
     
 elif user == 1:
-    print('###############################################################')
-    print('List before operation' + default_list)
+    print('*******************************************')
+    print('Option 1: Append an Element')
+    print('*******************************************')
+    print()
     
-    list.append(
+    
+    user_append = input('Enter the element to be Appended to the List: ')
+    print()
+    print('List before operation:' , default_list)
+    default_list.append(user_append)
+    print('List after operation: ' , default_list)
+    
+
+
+elif user == 2:
+    print('*******************************************')
+    print('Option 2: Insert an Element')
+    print('*******************************************')
+    print()
+    print(default_list)
+    user_location = int(input('Enter the place you want to insert(using a digit): '))
+    if user_location < 1 or user_location > len(default_list):
+        print('invalid digit')
+        exit()
+    
+    user_insert = input('Enter the element you want to insert: ')
+    print()
+    
+    print('List before operation:' , default_list)
+    
+    list = default_list
+    list.insert(user_location - 1, user_insert)
+    
+    print('List after operation: ' , list)
+    
+    
+    
+    
+    
+elif user == 3:
+    print('*******************************************')
+    print('Option 3: Append A List To The Given List')
+    print('*******************************************')
+    print()
+    
+    user_list = input('Enter List, eg. (e.g. 23,34,45,57): ')
+    print(default_list)
+    user = list(user_list)
+    default_list = default_list+ user 
+    
+    
+    
+    
+    
+    
+    
+    
+elif user == 5:
+    user_position = input('Enter the name of item to delete: ') 
+    
+    print('List before operation:' , default_list)
+    list = default_list
+    list.remove(user_position)
+    
+    print('List after operation: ' , list)
+
+
+
+
+
+
+
+
+
+
+
